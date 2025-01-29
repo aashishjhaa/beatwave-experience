@@ -1,9 +1,60 @@
 import { Navbar } from "@/components/Navbar";
 import { AudioPlayer } from "@/components/AudioPlayer";
-import { Search } from "lucide-react";
+import { Search, Download, Play, Heart } from "lucide-react";
 
 const Index = () => {
   const trendingTags = ["#EDM2024", "#HipHopVibes", "#PopHits", "#ProducerLife"];
+
+  const featuredBeats = [
+    {
+      id: 1,
+      title: "50 BEATS by",
+      artist: "Rob EVN",
+      price: 49.99,
+      verified: true,
+      image: "/lovable-uploads/c1b65923-2e8e-4392-9121-56f8b552ed8d.png"
+    },
+    {
+      id: 2,
+      title: "Chill Vibes",
+      artist: "DJ Smooth",
+      price: 29.99,
+      verified: false,
+      image: "/lovable-uploads/beat2.png"
+    },
+    {
+      id: 3,
+      title: "Hip Hop Essentials",
+      artist: "Beats by Jay",
+      price: 39.99,
+      verified: true,
+      image: "/lovable-uploads/beat3.png"
+    },
+    {
+      id: 4,
+      title: "EDM Anthems",
+      artist: "DJ Max",
+      price: 34.99,
+      verified: false,
+      image: "/lovable-uploads/beat4.png"
+    },
+    {
+      id: 5,
+      title: "Pop Hits",
+      artist: "Star Producer",
+      price: 44.99,
+      verified: true,
+      image: "/lovable-uploads/beat5.png"
+    },
+    {
+      id: 6,
+      title: "Lo-Fi Beats",
+      artist: "Chill Master",
+      price: 24.99,
+      verified: false,
+      image: "/lovable-uploads/beat6.png"
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-primary-dark font-poppins">
@@ -47,20 +98,44 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <h2 className="text-3xl font-bold text-white mb-8">Featured Beats</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Placeholder for beat cards */}
-            {[1, 2, 3, 4, 5, 6].map((i) => (
+            {featuredBeats.map((beat) => (
               <div
-                key={i}
-                className="bg-white/5 rounded-lg p-4 border border-white/10 hover:border-primary transition-colors"
+                key={beat.id}
+                className="bg-[#121212] rounded-lg overflow-hidden group relative"
               >
-                <div className="aspect-square bg-white/10 rounded-md mb-4"></div>
-                <h3 className="text-white font-medium mb-2">Beat Title #{i}</h3>
-                <p className="text-white/60 text-sm mb-4">Producer Name</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-primary font-medium">$29.99</span>
-                  <button className="bg-primary text-white px-4 py-2 rounded hover:bg-primary/90 transition-colors">
-                    Preview
+                <div className="aspect-square relative">
+                  <img 
+                    src={beat.image} 
+                    alt={beat.title} 
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <button className="bg-primary rounded-full p-3 transform hover:scale-110 transition-transform">
+                      <Play className="w-6 h-6 text-white" />
+                    </button>
+                  </div>
+                  <button className="absolute top-4 right-4 text-white/60 hover:text-white transition-colors">
+                    <Heart className="w-5 h-5" />
                   </button>
+                </div>
+                <div className="p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <div>
+                      <h3 className="text-white font-medium text-lg">{beat.title}</h3>
+                      <div className="flex items-center gap-1">
+                        <p className="text-white/60 text-sm">{beat.artist}</p>
+                        {beat.verified && (
+                          <span className="text-primary text-sm">✓</span>
+                        )}
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-white font-medium">${beat.price}</span>
+                      <button className="text-white/60 hover:text-white transition-colors">
+                        <Download className="w-5 h-5" />
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
