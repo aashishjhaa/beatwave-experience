@@ -95,9 +95,9 @@ const Index = () => {
         </div>
 
         {/* Featured Beats Section */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <h2 className="text-3xl font-bold text-white mb-8">Featured Beats</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
             {featuredBeats.map((beat) => (
               <div
                 key={beat.id}
@@ -110,29 +110,29 @@ const Index = () => {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <button className="bg-primary rounded-full p-3 transform hover:scale-110 transition-transform">
-                      <Play className="w-6 h-6 text-white" />
+                    <button className="bg-primary rounded-full p-2 md:p-3 transform hover:scale-110 transition-transform">
+                      <Play className="w-4 h-4 md:w-6 md:h-6 text-white" />
                     </button>
                   </div>
-                  <button className="absolute top-4 right-4 text-white/60 hover:text-white transition-colors">
-                    <Heart className="w-5 h-5" />
+                  <button className="absolute top-2 right-2 md:top-4 md:right-4 text-white/60 hover:text-white transition-colors">
+                    <Heart className="w-4 h-4 md:w-5 md:h-5" />
                   </button>
                 </div>
-                <div className="p-4">
-                  <div className="flex items-center justify-between mb-2">
+                <div className="p-2 md:p-4">
+                  <div className="flex items-center justify-between mb-1 md:mb-2">
                     <div>
-                      <h3 className="text-white font-medium text-lg">{beat.title}</h3>
+                      <h3 className="text-white font-medium text-sm md:text-lg">{beat.title}</h3>
                       <div className="flex items-center gap-1">
-                        <p className="text-white/60 text-sm">{beat.artist}</p>
+                        <p className="text-white/60 text-xs md:text-sm">{beat.artist}</p>
                         {beat.verified && (
-                          <span className="text-primary text-sm">✓</span>
+                          <span className="text-primary text-xs md:text-sm">✓</span>
                         )}
                       </div>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-white font-medium">${beat.price}</span>
+                    <div className="flex items-center gap-1 md:gap-2">
+                      <span className="text-white font-medium text-sm md:text-base">${beat.price}</span>
                       <button className="text-white/60 hover:text-white transition-colors">
-                        <Download className="w-5 h-5" />
+                        <Download className="w-4 h-4 md:w-5 md:h-5" />
                       </button>
                     </div>
                   </div>
