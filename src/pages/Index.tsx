@@ -12,7 +12,7 @@ const Index = () => {
       artist: "Rob EVN",
       price: 49.99,
       verified: true,
-      image: "/lovable-uploads/c1b65923-2e8e-4392-9121-56f8b552ed8d.png"
+      image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&auto=format&fit=crop&q=60"
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ const Index = () => {
       artist: "DJ Smooth",
       price: 29.99,
       verified: false,
-      image: "/lovable-uploads/beat2.png"
+      image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800&auto=format&fit=crop&q=60"
     },
     {
       id: 3,
@@ -28,7 +28,7 @@ const Index = () => {
       artist: "Beats by Jay",
       price: 39.99,
       verified: true,
-      image: "/lovable-uploads/beat3.png"
+      image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&auto=format&fit=crop&q=60"
     },
     {
       id: 4,
@@ -36,7 +36,7 @@ const Index = () => {
       artist: "DJ Max",
       price: 34.99,
       verified: false,
-      image: "/lovable-uploads/beat4.png"
+      image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&auto=format&fit=crop&q=60"
     },
     {
       id: 5,
@@ -44,7 +44,7 @@ const Index = () => {
       artist: "Star Producer",
       price: 44.99,
       verified: true,
-      image: "/lovable-uploads/beat5.png"
+      image: "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800&auto=format&fit=crop&q=60"
     },
     {
       id: 6,
@@ -52,7 +52,7 @@ const Index = () => {
       artist: "Chill Master",
       price: 24.99,
       verified: false,
-      image: "/lovable-uploads/beat6.png"
+      image: "https://images.unsplash.com/photo-1506157786151-b8491531f063?w=800&auto=format&fit=crop&q=60"
     }
   ];
 
