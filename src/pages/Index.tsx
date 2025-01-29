@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { AudioPlayer } from "@/components/AudioPlayer";
-import { Search, Download, Play, Heart } from "lucide-react";
+import { Search, ShoppingCart, Play, Heart } from "lucide-react";
 
 const Index = () => {
   const trendingTags = ["#EDM2024", "#HipHopVibes", "#PopHits", "#ProducerLife"];
@@ -8,8 +8,7 @@ const Index = () => {
   const featuredBeats = [
     {
       id: 1,
-      title: "50 BEATS by",
-      artist: "Rob EVN",
+      title: "50 BEATS",
       price: 49.99,
       verified: true,
       image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&auto=format&fit=crop&q=60"
@@ -17,7 +16,6 @@ const Index = () => {
     {
       id: 2,
       title: "Chill Vibes",
-      artist: "DJ Smooth",
       price: 29.99,
       verified: false,
       image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800&auto=format&fit=crop&q=60"
@@ -25,7 +23,6 @@ const Index = () => {
     {
       id: 3,
       title: "Hip Hop Essentials",
-      artist: "Beats by Jay",
       price: 39.99,
       verified: true,
       image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&auto=format&fit=crop&q=60"
@@ -33,7 +30,6 @@ const Index = () => {
     {
       id: 4,
       title: "EDM Anthems",
-      artist: "DJ Max",
       price: 34.99,
       verified: false,
       image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&auto=format&fit=crop&q=60"
@@ -41,7 +37,6 @@ const Index = () => {
     {
       id: 5,
       title: "Pop Hits",
-      artist: "Star Producer",
       price: 44.99,
       verified: true,
       image: "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800&auto=format&fit=crop&q=60"
@@ -49,7 +44,6 @@ const Index = () => {
     {
       id: 6,
       title: "Lo-Fi Beats",
-      artist: "Chill Master",
       price: 24.99,
       verified: false,
       image: "https://images.unsplash.com/photo-1506157786151-b8491531f063?w=800&auto=format&fit=crop&q=60"
@@ -119,20 +113,12 @@ const Index = () => {
                   </button>
                 </div>
                 <div className="p-2 md:p-4">
-                  <div className="flex items-center justify-between mb-1 md:mb-2">
-                    <div>
-                      <h3 className="text-white font-medium text-sm md:text-lg">{beat.title}</h3>
-                      <div className="flex items-center gap-1">
-                        <p className="text-white/60 text-xs md:text-sm">{beat.artist}</p>
-                        {beat.verified && (
-                          <span className="text-primary text-xs md:text-sm">✓</span>
-                        )}
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-1 md:gap-2">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-white font-medium text-sm md:text-base truncate pr-2">{beat.title}</h3>
+                    <div className="flex items-center gap-2">
                       <span className="text-white font-medium text-sm md:text-base">${beat.price}</span>
-                      <button className="text-white/60 hover:text-white transition-colors">
-                        <Download className="w-4 h-4 md:w-5 md:h-5" />
+                      <button className="bg-primary hover:bg-primary/90 text-white p-1.5 rounded-full transition-colors">
+                        <ShoppingCart className="w-4 h-4" />
                       </button>
                     </div>
                   </div>
